@@ -1,13 +1,13 @@
 <div class="tab-pane active" id="tab3">
-    <form method="POST" action="#">
+    <form [formGroup]="cartForm" (ngSubmit)="sendSearchTerm(cartForm.value)">
         <div class="input-group">
             <label class="label">Votre recherche:</label>
-            <input class="input--style-1" type="text" id="search_term" name="search_term" placeholder="Sushis" required="required">
+            <input class="input--style-1" type="text" id="search_term" name="search_term" [placeholder]="search_term_f" value="" [formControl]="cartForm.controls['search_term']">
         </div>
         <div class="input-group">
             <label class="label">Votre adresse:</label>
-            <input class="input--style-1" type="text" id="address" name="address" placeholder="16 rue Huguerie - 33000 Bordeaux" required="required">
+            <input class="input--style-1" type="text" id="address" name="address" [placeholder]="address_f" value="" [formControl]="cartForm.controls['address']">
         </div>
-        <button class="btn-submit" type="submit">Rechercher</button>
+        <button class="btn-submit" type="submit" [disabled]="!cartForm.valid">Rechercher</button>
     </form>
 </div>

@@ -1003,7 +1003,7 @@
     pointer-events: none;
   }
   
-  .tab-content > .search_results {
+  .tab-content .search_results {
     padding: 38px 55px;
     padding-bottom: 45px;
   }

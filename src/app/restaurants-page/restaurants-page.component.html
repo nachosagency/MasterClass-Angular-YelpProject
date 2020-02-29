@@ -1,0 +1,29 @@
+<div class="page-wrapper bg-color-1 p-t-75 p-b-100">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-2">
+            <div class="card-body">
+                <ul class="tab-list">
+                    <li class="tab-list__item">
+                        <a class="tab-list__link isDisabled" routerLink="/hotels" data-toggle="tab">Hôtels</a>
+                    </li>
+                    <li class="tab-list__item">
+                        <a class="tab-list__link isDisabled" routerLink="/voitures" data-toggle="tab">Voitures</a>
+                    </li>
+                    <li class="tab-list__item active">
+                        <a class="tab-list__link" routerLink="/restaurants" data-toggle="tab">restaurants</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab1">Hôtels</div>
+                    <div class="tab-pane" id="tab2">Voitures</div>
+                    <app-resto-searchbar 
+                        [search_term_f]="search_term_f"
+                        [address_f]="address_f"
+                        (sendInputedValue)="receiveNewForm($event)"></app-resto-searchbar>
+  
+                    <app-resultzone [yelp_business]="yelp_business"></app-resultzone>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

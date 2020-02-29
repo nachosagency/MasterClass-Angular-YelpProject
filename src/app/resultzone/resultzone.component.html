@@ -1,3 +1,8 @@
-<div class="search_results" id="search_results">
-                      
+<div *ngIf="yelp_business !== undefined && yelp_business.businesses" class="search_results" id="search_results">
+    <div *ngFor="let business of yelp_business.businesses" style="width:33%;display:inline-block;margin:15px 0;">
+        <a [href]="business.url">
+            <img [src]="business.image_url" style="width:100%;" /><br />
+            {{business.name}}
+        </a>
+    </div>
 </div>
